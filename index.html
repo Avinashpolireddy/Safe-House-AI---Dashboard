@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Safe-House AI Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <!-- Login Screen -->
+    <div id="login-screen">
+        <h2>Safe-House AI</h2>
+        <p>Log in to access your home security dashboard</p>
+        <input type="text" id="username" placeholder="Username">
+        <input type="password" id="password" placeholder="Password">
+        <button onclick="login()">Login</button>
+        <p id="login-error" style="color: red; display: none;">Invalid credentials. Please try again.</p>
+    </div>
+
+    <!-- Dashboard -->
+    <div id="dashboard" style="display: none;">
+        <header>
+            <h1>Safe-House AI</h1>
+            <p>Smart Security Dashboard</p>
+            <span class="status-badge">Armed</span>
+        </header>
+
+        <div class="grid-container">
+            <!-- Quick Actions -->
+            <div class="card quick-actions">
+                <h3>Quick Actions</h3>
+                <div class="actions-grid">
+                    <button onclick="disarmSystem()"><i class="fas fa-shield-alt"></i> Disarm System</button>
+                    <button onclick="viewCameras()"><i class="fas fa-video"></i> View Cameras</button>
+                    <button onclick="viewEventHistory()"><i class="fas fa-history"></i> Event History</button>
+                    <button onclick="callEmergency()"><i class="fas fa-phone-alt"></i> Emergency</button>
+                </div>
+            </div>
+            
+            <!-- Active Alerts -->
+            <div class="card active-alerts">
+                <h3>Active Alerts</h3>
+                <div class="alert">
+                    <p>Front Door</p>
+                    <small>10:45 AM</small>
+                    <span class="alert-status active">Active</span>
+                </div>
+                <div class="alert">
+                    <p>WiFi System</p>
+                    <small>9:30 AM</small>
+                    <span class="alert-status resolved">Resolved</span>
+                </div>
+            </div>
+            
+            <!-- Connected Devices -->
+            <div class="card connected-devices">
+                <h3>Connected Devices</h3>
+                <div class="device">
+                    <p>Front Door Camera</p>
+                    <small>Battery: 95%</small>
+                    <span class="device-status online">Online</span>
+                </div>
+                <div class="device">
+                    <p>Back Door Sensor</p>
+                    <small>Battery: 85%</small>
+                    <span class="device-status online">Online</span>
+                </div>
+                <div class="device">
+                    <p>Smart Lock</p>
+                    <small>Battery: 90%</small>
+                    <span class="device-status online">Online</span>
+                </div>
+            </div>
+            
+            <!-- AI Protection Status -->
+            <div class="card ai-protection">
+                <h3>AI Protection Status</h3>
+                <div class="protection-item">
+                    <p><i class="fas fa-robot"></i> Threat Detection</p>
+                    <span class="status active">Active</span>
+                </div>
+                <div class="protection-item">
+                    <p><i class="fas fa-wifi"></i> Network Protection</p>
+                    <span class="status secure">Secure</span>
+                </div>
+            </div>
+            
+            <!-- Security Tips -->
+            <div class="card security-tips">
+                <h3>Security Tips</h3>
+                <ul>
+                    <li><i class="fas fa-lightbulb"></i> Enable two-factor authentication for additional security</li>
+                    <li><i class="fas fa-lightbulb"></i> Regularly update your device passwords</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
